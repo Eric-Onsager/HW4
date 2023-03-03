@@ -9,18 +9,18 @@ class SessionsController < ApplicationController
         session["user_id"] = @user["id"]
         redirect_to "/places"
       else
-        flash["notice"] = "Nope."
+        flash["notice"] = "Try Again"
         redirect_to "/login"
       end
     else
-      flash["notice"] = "Nope."
+      flash["notice"] = "Try Again"
       redirect_to "/login"
     end
   end
 
   def destroy
     session["user_id"] = nil
-    flash["notice"] = "Goodbye."
+    flash["notice"] = "Logged Out"
     redirect_to "/login"
   end
 end
